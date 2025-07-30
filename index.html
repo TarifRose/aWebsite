@@ -80,6 +80,27 @@
       <input type="password" name="password" placeholder="Password" required>
       <button type="submit">Log In</button>
     </form>
+    <script>
+      document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        fetch('/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+    })
+          .then(response => 
+            {if (response.redirected) {
+              window.location.href = response.url; // Handles Flask redirect
+            } else 
+              response.json().then(data => alert(data.message));
+            }
+                })
+        .catch(err => alert('Error: ' + err));
+      });
+    </script>
+    
     <p id="loginMessage"></p>
   </center>
   
