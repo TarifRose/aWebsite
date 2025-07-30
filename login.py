@@ -3,8 +3,8 @@ from flask import Flask, request, jsonify, redirect, url_for, render_template
 app = Flask(__name__)
 
 users = {
-    "tos": {"password": "123", "redirect": "mineui"},
-    "usr": {"password": "usrprofile", "redirect": "mineui"}
+    "admin": {"password": "123", "redirect": "mineui"},
+    "twr": {"password": "321", "redirect": "mineui"}
 }
 
 @app.route('/login', methods=['POST'])
