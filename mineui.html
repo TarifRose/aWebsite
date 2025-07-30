@@ -1,0 +1,32 @@
+<!--DOCTYPE html-->
+<html>
+<head>
+  <title>BTC Mining Simulation</title>
+</head>
+<body>
+  <button id="mine-_-">Start Mining</button>
+  <pre id="output"></pre>
+
+  <script>
+    document.getElementById('mine_-_').addEventListener('click', function() {
+      fetch('/mine', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          data: "Hello-World",
+          difficulty: 5
+        })
+      })
+      .then(response => response.json())
+      .then(result => {
+        document.getElementById('output').textContent = JSON.stringify(result, null, 2);
+      })
+      .catch(error => {
+        document.getElementById('output').textContent = 'Error: ' + error;
+      });
+    });
+  </script>
+</body>
+</html>
