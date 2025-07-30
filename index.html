@@ -73,12 +73,17 @@
                 <p>A Freelancer; CompTIA & CISCO certified Cyber Security Analyst; Contractor; Software Developer; Philosopher ~ Interested in all things tech and fitness.</p>
             </center> </section>
     </div>
-    
-    <center>
-        <button disabled>  L o g  in </button>
-    </center>
   
-   <center>
+  <center>
+    <form id="loginForm">
+      <input type="text" name="username" placeholder="Username" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <button type="submit">Log In</button>
+    </form>
+    <p id="loginMessage"></p>
+  </center>
+  
+  <center>
      <a href="https://docs.google.com/document/d/1kFCi0RbpLy5YHf_W7ILvyBHMAooeAqFTRmm-SQyAB3c/edit?usp=sharing" target="_blank">
           <img src="rezum.png" alt="rESUME"></img>
         </a>
@@ -97,6 +102,32 @@
       
 
     </footer>
+
+  <script>
+document.getElementById('loginForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  
+  const username = e.target.username.value;
+  const password = e.target.password.value;
+
+  try {
+    const response = await fetch('/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, password })
+    });
+
+    if (response.redirected) {
+      window.location.href = response.url; // Redirect to appropriate page
+    } else {
+      const result = await response.json();
+      document.getElementById('loginMessage').textContent = result.message;
+    }
+  } catch (error) {
+    document.getElementById('loginMessage').textContent = 'Error connecting to server.';
+  }
+});
+</script>
 
 </body>
 
