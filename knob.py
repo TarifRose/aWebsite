@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify, redirect, url_for, render_template
 
 app = Flask(__name__)
 
-users = {
+key = {
     "admin": {"password": "123", "redirect": "mineui"},
     "twr": {"password": "321", "redirect": "mineui"}
 }
@@ -17,8 +17,8 @@ def login():
     username = data['username']
     password = data['password']
 
-    if username in users and users[username]['password'] == password:
-        redirect_page = users[username]['redirect']
+    if username in key and key[username]['password'] == password:
+        redirect_page = key[username]['redirect']
         return redirect(url_for(redirect_page))
     else:
         return jsonify({'message': 'Invalid user or password'}), 401
