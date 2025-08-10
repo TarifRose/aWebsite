@@ -74,15 +74,15 @@
     <div class=".container">
 
         <section class="bio">
-          <h1>81089FBF92C26CA186B701F0F50B7844F</h1><p1></p1>
-          <h2>699E3BA7415C26CFA2C281178A7107E</h2><p2></p2>
+          <h1>81089FBF92C26CA186B701F0F50B7844F699E3BA7415C26CFA2C281178A7107E</h1><p1></p1>
           <p2>A Freelancer; CompTIA & CISCO certified Cyber Security Analyst; Contractor; Software Developer; Philosopher ~ Interested in all things tech and fitness.</p2> </section>
     </div>
   
   <center>
-    <form id="loginForm">
-      <input type="text" name="username" placeholder="Username" required>
-      <input type="password" name="password" placeholder="Password" required>
+  <!--  <form id="loginForm">
+      <input type="text" id="username" name="username" placeholder="Username" required>
+      <input type="password" id="password" name="password" placeholder="Password" required>
+      
       <button type="submit">Log In</button>
     </form>
     <script>
@@ -105,20 +105,19 @@
         .catch(err => alert('Error: ' + err));
       });
     </script>
-    
     <p id="loginMessage"></p>
   </center>
   <center><span style="text-decoration:blink;"><a href="https://tarifrose.github.io/iwebsite/" target="_blank">myWebDomain</a></span></center>
   <center>
      <a href="https://docs.google.com/document/d/1kFCi0RbpLy5YHf_W7ILvyBHMAooeAqFTRmm-SQyAB3c/edit?usp=sharing" target="_blank">
           <img src="rezum.png" alt="rESUME"></img>
-        </a>
+        </a>-->
     </center>
     <footer>
 
         <address> findMe HERE: </address>
-      <a href="https://cash.app/$TarifRose" target="_blank" style="color:green;">BTc||cASHAPP: bc1qdqzsfh0hpwwsteedkhja8r6swyyvmhjttka6xx ~</a><p></p>
-      <a href="https://www.coinbase.com" target="_blank" style="color:blue;">Alt Recieving Address: 33cBbV9VJgxyFPXvyKj9V5k6BmZoqvJ1Ar ~</a><p></p>
+      <a href="https://cash.app/$TarifRose" target="_blank" style="color:green;">BTc||cASHAPP: bc1qdqzsfh0hpwwsteedkhja8r6swyyvmhjttka6xx ~</a>
+      <a href="https://www.coinbase.com" target="_blank" style="color:blue;">Alt Recieving Address: 33cBbV9VJgxyFPXvyKj9V5k6BmZoqvJ1Ar ~</a><p3></p3>
       <a href="https://www.linkedin.com" target="_blank" style="color:white;">Linkedin |</a> 
       <a href="https://www.linkedin.com/in/tarifrose" target="_blank" style="color:white;">| myPage ~</a> 
       <a href="https://www.youtube.com" target="_blank" style="color:crimson;"> Youtube |</a>
@@ -130,12 +129,12 @@
 
     </footer>
 
-  <script>
+ <!-- <script>
 document.getElementById('loginForm').addEventListener('submit', async function(e) {
   e.preventDefault();
   
-  const username = e.target.username.value;
-  const password = e.target.password.value;
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
 
   try {
     const response = await fetch('/login', {
@@ -155,7 +154,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
   }
 });
 </script>
-
+-->
 </body>
 
 </html>
