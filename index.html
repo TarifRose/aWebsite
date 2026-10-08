@@ -47,14 +47,22 @@ make login page
     <header>
       <p> _w_E_l_c_O_m_E_ </p>
     </header>
-  <section class="bio">
-    <!--
-    <p> start: </p> 
-    <input type="text" id="start" placeholder="c38eae8f8bcba8u80b..."> </section>
-  -->
-  <center>
-
-  </center>
+    <center>
+      <button id="swapBtn">Go</button> <!-- label->link variable -->
+        <script>
+          const btn = document.getElementById("swapBtn");
+          let flag = true; // tracks label
+          setInterval(
+            () => {
+              flag = !flag;
+              btn.textContent = flag ? "Go" : "Find Out More";}, 3000);
+        </script>
+      <!-- why is class bio here
+      <section class="bio">
+        
+      </section>
+      -->
+    </center>
     </body>
     <footer>
       <a href="https://hiugiygi.github.io/aSite/" target ="_blank">  About Me: </a>
